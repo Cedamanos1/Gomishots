@@ -1,0 +1,324 @@
+═══════════════════════════════════════════════════════════════
+           GOMISHOTS 2.0 - ÍNDICE DE ARCHIVOS
+═══════════════════════════════════════════════════════════════
+
+📦 PAQUETE DE MIGRACIÓN COMPLETO
+Versión: 2.0
+Fecha: Diciembre 2024
+Total archivos: 18
+
+═══════════════════════════════════════════════════════════════
+
+📂 ARCHIVOS PHP - BACKEND (11 archivos)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  login.php
+    • Sistema de autenticación con base de datos
+    • Hashing de contraseñas (bcrypt)
+    • Registro de logs de acceso
+    • Validación de credenciales
+    📄 88 líneas | ⚙️ Reemplaza el original
+
+2️⃣  logout.php  
+    • Cierre de sesión seguro
+    • Registro de logout en base de datos
+    • Destrucción de sesión y cookies
+    📄 25 líneas | ⚙️ Reemplaza el original
+
+3️⃣  ingreso.php
+    • Interfaz de registro de ingresos
+    • Lee datos desde tabla ingresos
+    • Tokens CSRF para seguridad
+    • Búsqueda en tiempo real
+    📄 185 líneas | ⚙️ Reemplaza el original
+
+4️⃣  procesar_ingreso.php
+    • Procesa registro de ingresos
+    • INSERT en base de datos
+    • Validación completa de datos
+    • Prepared statements
+    📄 87 líneas | ⚙️ Reemplaza el original
+
+5️⃣  modificar_i.php
+    • Modifica ingresos existentes
+    • Auditoría en tabla modificaciones
+    • Registro de justificaciones
+    • UPDATE con validación
+    📄 101 líneas | ⚙️ Reemplaza el original
+
+6️⃣  salidas.php
+    • Gestión de salidas de productos
+    • Validación de stock en tiempo real
+    • INSERT en tabla salidas
+    • Control de existencias
+    📄 282 líneas | ⚙️ Reemplaza el original
+
+7️⃣  almacen.php
+    • Vista consolidada de stock
+    • Cálculo con SUM() optimizado
+    • Alertas de stock bajo
+    • Resumen estadístico
+    📄 149 líneas | ⚙️ Reemplaza el original
+
+8️⃣  dashboard.php
+    • Dashboard analítico completo
+    • 4 gráficos interactivos (Chart.js)
+    • Filtros por fecha
+    • Estadísticas en tiempo real
+    📄 386 líneas | ⚙️ Reemplaza el original
+
+9️⃣  exportar_excel.php
+    • Exporta datos a Excel (.xls)
+    • Datos desde base de datos
+    • Formato profesional
+    • UTF-8 compatible
+    📄 107 líneas | ⚙️ Reemplaza el original
+
+🔟 exportar_pdf.php
+    • Genera PDF para impresión
+    • Datos en tiempo real
+    • Resumen estadístico
+    • Alertas incluidas
+    📄 185 líneas | ⚙️ Reemplaza el original
+
+1️⃣1️⃣ generar_reporte_ingresos.php
+    • Genera reporte CSV
+    • Descarga de ingresos
+    • SELECT desde base de datos
+    📄 48 líneas | ⚙️ Reemplaza el original
+
+═══════════════════════════════════════════════════════════════
+
+🛠️ SCRIPTS DE UTILIDADES (2 archivos)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣2️⃣ migrar_datos.php
+    • Migra datos CSV a SQL
+    • Lee ingresos.csv → tabla ingresos
+    • Lee salidas.csv → tabla salidas
+    • Mantiene CSV como backup
+    • Registro de migración en logs
+    📄 117 líneas | 🆕 Script auxiliar
+
+1️⃣3️⃣ crear_usuario.php
+    • Script interactivo
+    • Crea nuevos usuarios
+    • Hashea contraseñas
+    • Asigna roles (admin/operador)
+    📄 77 líneas | 🆕 Script auxiliar
+
+═══════════════════════════════════════════════════════════════
+
+🗄️ BASE DE DATOS (1 archivo)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣4️⃣ schema.sql
+    • Esquema completo de BD
+    • 6 tablas: usuarios, productos, ingresos,
+      salidas, modificaciones, logs_sistema
+    • 7 índices para optimización
+    • 4 foreign keys
+    • 2 constraints CHECK
+    • Usuario admin por defecto
+    • Compatible MySQL/PostgreSQL
+    📄 84 líneas | 🆕 Esquema SQL
+
+═══════════════════════════════════════════════════════════════
+
+📚 DOCUMENTACIÓN (4 archivos)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣5️⃣ README_MIGRACION.md
+    • Guía completa de migración
+    • Paso a paso detallado
+    • Configuración de variables de entorno
+    • Solución de problemas
+    • Comandos copy-paste
+    • Checklist completo
+    📄 ~320 líneas | 📖 Documentación principal
+
+1️⃣6️⃣ RESUMEN_CAMBIOS.md
+    • Comparación antes/después
+    • Lista detallada de cambios
+    • Tabla comparativa de funcionalidades
+    • Beneficios de la migración
+    • Estructura de base de datos
+    • Mejoras de seguridad
+    📄 ~290 líneas | 📖 Referencia rápida
+
+1️⃣7️⃣ INICIO_RAPIDO.md
+    • Guía de instalación express
+    • 6 pasos en 15 minutos
+    • Comandos directos
+    • Verificación rápida
+    • Troubleshooting básico
+    📄 ~120 líneas | 📖 Quick start
+
+1️⃣8️⃣ MAPA_CAMBIOS.txt
+    • Diagrama visual ASCII art
+    • Flujo de datos antes/después
+    • Estructura de tablas
+    • Comparación gráfica
+    • Resumen de seguridad
+    • Tabla de rendimiento
+    📄 ~200 líneas | 📖 Referencia visual
+
+BONO:
+• ESTADISTICAS.txt - Métricas completas del proyecto
+• INDICE.txt - Este archivo
+
+═══════════════════════════════════════════════════════════════
+
+📋 ORDEN DE LECTURA RECOMENDADO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para implementación rápida:
+1. INICIO_RAPIDO.md ← Comienza aquí
+2. schema.sql
+3. Archivos PHP
+4. migrar_datos.php (si tienes CSV)
+
+Para entender los cambios:
+1. RESUMEN_CAMBIOS.md ← Comienza aquí
+2. MAPA_CAMBIOS.txt
+3. ESTADISTICAS.txt
+4. README_MIGRACION.md
+
+Para referencia completa:
+1. README_MIGRACION.md ← Guía definitiva
+2. RESUMEN_CAMBIOS.md
+3. Archivos PHP individuales
+
+═══════════════════════════════════════════════════════════════
+
+🎯 USO DE CADA ARCHIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PARA INSTALAR:
+→ schema.sql (ejecutar en BD)
+→ Archivos PHP (subir al servidor)
+→ migrar_datos.php (ejecutar una vez)
+
+PARA GESTIONAR USUARIOS:
+→ crear_usuario.php (ejecutar cuando sea necesario)
+
+PARA ENTENDER:
+→ README_MIGRACION.md (leer completo)
+→ MAPA_CAMBIOS.txt (referencia visual)
+
+PARA RESOLVER PROBLEMAS:
+→ README_MIGRACION.md sección troubleshooting
+→ INICIO_RAPIDO.md problemas comunes
+
+═══════════════════════════════════════════════════════════════
+
+✅ CHECKLIST DE ARCHIVOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Archivos PHP Backend:
+☑ login.php
+☑ logout.php  
+☑ ingreso.php
+☑ procesar_ingreso.php
+☑ modificar_i.php
+☑ salidas.php
+☑ almacen.php
+☑ dashboard.php
+☑ exportar_excel.php
+☑ exportar_pdf.php
+☑ generar_reporte_ingresos.php
+
+Scripts Auxiliares:
+☑ migrar_datos.php
+☑ crear_usuario.php
+
+Base de Datos:
+☑ schema.sql
+
+Documentación:
+☑ README_MIGRACION.md
+☑ RESUMEN_CAMBIOS.md
+☑ INICIO_RAPIDO.md
+☑ MAPA_CAMBIOS.txt
+☑ ESTADISTICAS.txt
+☑ INDICE.txt (este archivo)
+
+═══════════════════════════════════════════════════════════════
+
+🔧 REQUISITOS DEL SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Servidor:
+• PHP 5.5+ (recomendado 7.4+)
+• MySQL 5.6+ o PostgreSQL 9.5+
+• Apache/Nginx
+• Extensión PDO habilitada
+
+Opcional:
+• phpMyAdmin (gestión BD visual)
+• Composer (si usas dependencias)
+
+═══════════════════════════════════════════════════════════════
+
+📊 ESTADÍSTICAS DEL PAQUETE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Total archivos:           18 archivos
+Archivos PHP:             13 archivos
+Esquema SQL:               1 archivo
+Documentación:             4 archivos
+
+Código PHP:            1,837 líneas
+Código SQL:               84 líneas
+Documentación:           930 líneas
+Total código:          3,151 líneas
+
+Tablas BD:                 6 tablas
+Índices:                   7 índices
+Foreign Keys:              4 relaciones
+Constraints:               2 validaciones
+
+═══════════════════════════════════════════════════════════════
+
+🚀 PRÓXIMOS PASOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Lee INICIO_RAPIDO.md
+2. Ejecuta schema.sql en tu BD
+3. Configura bd.php con tus credenciales
+4. Sube los archivos PHP al servidor
+5. Ejecuta migrar_datos.php (si tienes CSV)
+6. Login con admin/admin123
+7. Cambia la contraseña del admin
+8. ¡Empieza a usar el sistema!
+
+═══════════════════════════════════════════════════════════════
+
+💡 CONSEJOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Haz backup de tus CSV antes de migrar
+✓ Prueba primero en entorno de desarrollo
+✓ Lee README_MIGRACION.md completo
+✓ Cambia contraseñas por defecto
+✓ Configura backups automáticos de la BD
+✓ Revisa los logs en tabla logs_sistema
+
+═══════════════════════════════════════════════════════════════
+
+📞 SOPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¿Problemas?
+1. Revisa README_MIGRACION.md sección troubleshooting
+2. Verifica logs de PHP
+3. Revisa tabla logs_sistema en BD
+4. Consulta INICIO_RAPIDO.md problemas comunes
+
+═══════════════════════════════════════════════════════════════
+
+                🎉 ¡TODO LISTO PARA MIGRAR! 🎉
+
+          De CSV básico a SQL empresarial en 35 minutos
+
+═══════════════════════════════════════════════════════════════
